@@ -11,13 +11,11 @@ class DateTableSeeder extends Seeder
      */
     public function run()
     {
-        $count = (int)$this->command->ask('Cuantas fechas quieres crear ?', 10);
+        $count = (int)$this->command->ask('Cuantas fechas quieres crear ?', 1000);
 
         $this->command->info("Creando {$count} fechas.");
 
-        // Create the Genre
-
-        $genres = factory(App\dim_date::class, $count)->create();
+        $dates = factory(App\dim_date::class, $count)->create();
 
         $this->command->info('Fechas Creadas!');
     }

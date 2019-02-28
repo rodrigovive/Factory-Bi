@@ -12,15 +12,15 @@ class CiudadTableSeeder extends Seeder
     public function run()
     {
         $r = 0 . '-' . 3;
-        $commentRange = $this->command->ask('Cuantas ciudades por zonas?', $r);
+        $range = $this->command->ask('Cuantas ciudades por zonas?', $r);
 
-        $zonas = App\dim_zona::all();
+        $regions = App\dim_zona::all();
 
-        $this->command->info("creando un rango de {$commentRange} ciudades para {$zonas->count()} zonas .");
+        $this->command->info("creando un rango de {$range} ciudades para {$regions->count()} zonas .");
 
-        $zonas->each(function($film) use ($commentRange){
-            factory(App\dim_ciudad::class, $this->count($commentRange))->create([
-                'id_zona' => $film->id_zona
+        $regions->each(function($region) use ($range){
+            factory(App\dim_ciudad::class, $this->count($range))->create([
+                'id_zona' => $region->id_zona
             ]);;
         });
 

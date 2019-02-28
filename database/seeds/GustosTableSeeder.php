@@ -11,13 +11,11 @@ class GustosTableSeeder extends Seeder
      */
     public function run()
     {
-        $count = (int)$this->command->ask('Cuantos gustos quieres crear ?', 10);
+        $count = (int)$this->command->ask('Cuantos gustos quieres crear ?', 50);
 
         $this->command->info("Creando {$count} gustos.");
 
-        // Create the Genre
-
-        $genres = factory(App\dim_gusto::class, $count)->create();
+        $gustos = factory(App\dim_gusto::class, $count)->create();
 
         $this->command->info('Gustos Creadas!');
     }

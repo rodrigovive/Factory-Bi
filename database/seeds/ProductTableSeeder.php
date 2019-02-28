@@ -12,15 +12,15 @@ class ProductTableSeeder extends Seeder
     public function run()
     {
         $r = 0 . '-' . 10;
-        $commentRange = $this->command->ask('Cuantos productos por familias?', $r);
+        $range = $this->command->ask('Cuantos productos por familias?', $r);
 
-        $familias = App\dim_familia::all();
+        $families = App\dim_familia::all();
 
-        $this->command->info("creando un rango de {$commentRange} productos para {$familias->count()} familias .");
+        $this->command->info("creando un rango de {$range} productos para {$families->count()} familias .");
 
-        $familias->each(function($film) use ($commentRange){
-            factory(App\dim_producto::class, $this->count($commentRange))->create([
-                'id_familia' => $film->id_familia
+        $families->each(function($family) use ($range){
+            factory(App\dim_producto::class, $this->count($range))->create([
+                'id_familia' => $family->id_familia
             ]);;
         });
 

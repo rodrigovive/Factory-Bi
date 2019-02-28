@@ -14,13 +14,13 @@ class DatabaseSeeder extends Seeder
         Eloquent::unguard();
 
         // Ask for db migration refresh, default is no
-        if ($this->command->confirm('Borrar datos?')) {
+//        if ($this->command->confirm('Borrar datos?')) {
 
             // Call the php artisan migrate:fresh using Artisan
             $this->command->call('migrate:fresh');
 
             $this->command->line("Database cleared.");
-        }
+//        }
 
 //        $this->call(App\dim_zona::class);
 //        $this->call(App\dim_ciudad::class);
@@ -33,7 +33,8 @@ class DatabaseSeeder extends Seeder
             ProductTableSeeder::class,
             RangoEdadTableSeeder::class,
             GustosTableSeeder::class,
-            RedSocialTableSeeder::class
+            RedSocialTableSeeder::class,
+            HechoTableSeeder::class
         ];
 
         $this->call($classes);

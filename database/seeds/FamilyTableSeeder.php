@@ -12,13 +12,11 @@ class FamilyTableSeeder extends Seeder
     public function run()
     {
         //
-        $count = (int)$this->command->ask('Cuantas familias quieres crear ?', 10);
+        $count = (int)$this->command->ask('Cuantas familias quieres crear ?', 20);
 
         $this->command->info("Creando {$count} familias.");
 
-        // Create the Genre
-
-        $genres = factory(App\dim_familia::class, $count)->create();
+        $families = factory(App\dim_familia::class, $count)->create();
 
         $this->command->info('Familias Creadas!');
     }
