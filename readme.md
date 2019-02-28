@@ -6,7 +6,7 @@
 ```
 copy .env.example .env
 composer install
-php artisan serve
+php artisan migrate
 php artisan db:seed
 ```
 
