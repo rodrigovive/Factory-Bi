@@ -12,5 +12,14 @@ class ZonaTableSeeder extends Seeder
     public function run()
     {
         //
+        $count = (int)$this->command->ask('Cuantas zonas quieres crear ?', 10);
+
+        $this->command->info("Creando {$count} zonas.");
+
+        // Create the Genre
+
+        $genres = factory(App\dim_zona::class, $count)->create();
+
+        $this->command->info('Zonas Creadas!');
     }
 }

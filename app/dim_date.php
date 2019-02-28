@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class dim_data extends Model
+class dim_date extends Model
 {
     //
     protected $table = 'dim_date';
