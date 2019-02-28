@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ZonaTableSeeder extends Seeder
+class RangoEdadTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,19 +13,21 @@ class ZonaTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('dim_zona')->insert([
+        DB::table('dim_rangoEdad')->insert([
             [
-                'nombre_zona' => 'Centro'
+                'nombre_rangoEdad' => '18-30'
             ],
             [
-                'nombre_zona' => 'Costa'
+                'nombre_rangoEdad' => '31-45'
             ],
             [
-                'nombre_zona' => 'Norte'
+                'nombre_rangoEdad' => '46-60'
             ],
             [
-                'nombre_zona' => 'Sur'
+                'nombre_rangoEdad' => '61-99'
             ]
         ]);
+
+
     }
 }

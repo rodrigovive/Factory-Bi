@@ -30,7 +30,10 @@ class DatabaseSeeder extends Seeder
             CiudadTableSeeder::class,
             DateTableSeeder::class,
             FamilyTableSeeder::class,
-            ProductTableSeeder::class
+            ProductTableSeeder::class,
+            RangoEdadTableSeeder::class,
+            GustosTableSeeder::class,
+            RedSocialTableSeeder::class
         ];
 
         $this->call($classes);

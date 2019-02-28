@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class ZonaTableSeeder extends Seeder
+class RedSocialTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,18 +12,18 @@ class ZonaTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('dim_zona')->insert([
+        DB::table('dim_redSocial')->insert([
             [
-                'nombre_zona' => 'Centro'
+                'nombre_redSocial' => 'Facebook'
             ],
             [
-                'nombre_zona' => 'Costa'
+                'nombre_redSocial' => 'Instagram'
             ],
             [
-                'nombre_zona' => 'Norte'
+                'nombre_redSocial' => 'Twitter'
             ],
             [
-                'nombre_zona' => 'Sur'
+                'nombre_redSocial' => 'Youtube'
             ]
         ]);
     }

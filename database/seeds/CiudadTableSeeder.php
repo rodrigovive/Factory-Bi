@@ -11,7 +11,7 @@ class CiudadTableSeeder extends Seeder
      */
     public function run()
     {
-        $r = 0 . '-' . 10;
+        $r = 0 . '-' . 3;
         $commentRange = $this->command->ask('Cuantas ciudades por zonas?', $r);
 
         $zonas = App\dim_zona::all();
